@@ -43,8 +43,8 @@ export const registerToken=async (req:Request, res:Response)=>{
     if(user==null){
         return res.status(404).json({message: "user no encontrado"});
     }
-    let nft = user.nfts.find(item=>item.token==token && project_id==project_id); 
-    if(nft){
+    let nft = user.nfts.find(item=>item.token==token); 
+    if(nft!=undefined){
         return res.json(user);    
     }
     
